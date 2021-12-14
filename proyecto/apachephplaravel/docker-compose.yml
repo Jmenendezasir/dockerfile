@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  apachephplaravel:
+    container_name: ApachePHP
+    image: webapachephp
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    networks:
+        phpMySQL:
+            ipv4_address: 172.30.10.30
+    ports:
+      - 8081:80
+networks:
+  phpMySQL:
+    external: true

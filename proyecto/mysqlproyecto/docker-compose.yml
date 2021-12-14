@@ -1,0 +1,23 @@
+version: '3.9'
+services:
+  mysql:
+    image: mysqlproyecto
+    container_name: mysql
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: "1234"
+    volumes:
+      - bbdd:/var/lib/mysql
+    networks:
+        phpMySQL:
+            ipv4_address: 172.30.10.10
+    ports:
+      - 33060:3306
+volumes:
+  bbdd:
+    external: true
+networks:
+  phpMySQL:
+    external: true

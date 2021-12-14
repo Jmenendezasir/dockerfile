@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  servidor1:
+    image: base
+    container_name: servidor1
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      - USUARIO=jose
+      - PASSWD=1234
