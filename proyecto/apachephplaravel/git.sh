@@ -18,5 +18,8 @@ rm $defaultRoute/database/migrations/2014_10_12_000000_create_users_table.php
 php artisan migrate
 php artisan passport:install
 
+chown -R www-data:www-data /var/www/html/apiproyecto
+
 service apache2 start
 tail -f /dev/null
+#revisar tail
