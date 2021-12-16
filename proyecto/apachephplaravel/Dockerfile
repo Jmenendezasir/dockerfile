@@ -31,6 +31,8 @@ RUN /root/composer.sh
 
 RUN /root/laravel.sh
 
+COPY ./auth.php /var/www/html/apiproyecto/config
+
 CMD apachectl -D FOREGROUND
 
 ENTRYPOINT [ "/root/git.sh" ]
